@@ -1,0 +1,41 @@
+!!! XML
+%xsl:stylesheet(version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
+	%xsl:template(match="/cv")
+		%html
+			%head
+				%link(rel="stylesheet" type="text/css" href="src/cv.css")
+			%body
+				.container
+					#personal-info
+						%h1
+							%xsl:value-of(select="personal-info/name")/
+						%p.address
+							%xsl:value-of(select="personal-info/address")/
+						%p.email
+							%xsl:value-of(select="personal-info/email")/
+					#headline
+						#jobtitle
+							%h1
+								%xsl:value-of(select="professional-info/job-title")/
+							%span.total-experience
+								%xsl:value-of(select="professional-info/total-experience")/
+						#sumary
+							%xsl:copy-of(select="professional-info/sumary/*")/
+						#core
+							%xsl:copy-of(select="professional-info/core/*")
+					#joblist
+						%h1 Professional Experience
+						%xsl:for-each(select="professional-info/experience/job")
+							.job
+								.jobhead
+									%span.company-name
+										%xsl:value-of(select="company")/
+									%span.location
+										%xsl:value-of(select="location")/
+									%span.start-date
+										%xsl:value-of(select="start-date")/
+									%span.end-date
+										%xsl:value-of(select="end-date")/
+								.jobdesc
+									%xsl:copy-of(select="text")/
+

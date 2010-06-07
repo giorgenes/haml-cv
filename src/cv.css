@@ -1,0 +1,76 @@
+.container {
+	width: 20cm;
+	border: 1px dashed;
+	margin: 1cm;
+	padding: 0.5cm;
+
+}
+
+#personal-info {
+	text-align: center;
+}
+
+#personal-info > h1 {
+	font-weight: bold;
+	margin-bottom: 0.05mm;
+}
+
+#personal-info > p {
+	margin-top: 0.5mm;
+	margin-bottom: 0.5mm;
+}
+
+#jobtitle > h1, #joblist > h1 {
+	text-align: center;
+}
+
+.start-date:before {
+	content: "(";
+}
+
+.start-date:after {
+	content: "-";
+}
+
+.company-name {
+	font-variant: small-caps;
+}
+
+.company-name:after {
+	content: ", "
+}
+
+.end-date:after {
+	content: ")";
+}
+
+.location:after {
+	content: " • "
+}
+
+.jobhead {
+	font-weight: bold;
+}
+
+.total-experience {
+	font-size: 12pt;
+	font-weight: normal;
+	position: absolute;
+	left: -1px;
+	top: -1px;
+	display: none;
+}
+
+.total-experience:before {
+	content: " (";
+}
+
+.total-experience:after {
+	content: ")";
+}
+
+#core {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+
